@@ -202,22 +202,55 @@ if (topBtn) {
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+const overlay = document.getElementById("menuOverlay");
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+function closeMenu() {
+  hamburger?.classList.remove("active");
+  navLinks?.classList.remove("active");
+  overlay?.classList.remove("active");
+  document.body.classList.remove("menu-open");
+
+  if (hamburger) {
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+}
+
+function openMenu() {
+  hamburger?.classList.add("active");
+  navLinks?.classList.add("active");
+  overlay?.classList.add("active");
+  document.body.classList.add("menu-open");
+
+  if (hamburger) {
+    hamburger.setAttribute("aria-expanded", "true");
+  }
+}
+
+hamburger?.addEventListener("click", () => {
+  const isOpen = hamburger.classList.contains("active");
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
-/* SCROLL REVEAL */
 
-const reveals = document.querySelectorAll(".reveal");
+overlay?.addEventListener("click", closeMenu);
 
-window.addEventListener("scroll", () => {
-  reveals.forEach((item) => {
-    const top = item.getBoundingClientRect().top;
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
 
-    if (top < window.innerHeight - 120) {
-      item.classList.add("active");
-    }
-  });
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    closeMenu();
+  }
 });
 /* ==========================
    COUNTERS
