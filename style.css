@@ -45,6 +45,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -54,6 +55,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  overflow-x: hidden;
 }
 
 h1 {
@@ -209,8 +221,9 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .navbar {
-    top: 12px;
-    padding: 12px 14px;
+    top: 10px;
+    width: calc(100% - 12px);
+    padding: 10px 12px;
     border-radius: 18px;
   }
 
@@ -398,16 +411,74 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 86vh;
+    padding: 100px 14px 40px;
+  }
+
+  .hero-content {
+    padding: 0 4px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 6px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+  }
+
   .about {
+    width: min(92%, 1200px);
     grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 70px auto;
   }
 
   .about-content {
     text-align: center;
   }
 
+  .about-content h2 {
+    font-size: clamp(1.8rem, 5.7vw, 2.4rem);
+  }
+
   .about-features {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .section-title {
+    margin-bottom: 36px;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+  }
+
+  .services,
+  .why-us,
+  .faq,
+  .gallery,
+  .contact {
+    padding: 70px 4%;
+  }
+
+  .service-card img {
+    height: 200px;
+  }
+
+  .testimonial-card p {
+    font-size: 1rem;
   }
 }
 /* ==========================
