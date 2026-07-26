@@ -16,18 +16,27 @@
     <div id="loader">
       <div class="spinner"></div>
     </div>
+
     <!-- Hero Section -->
     <header class="hero">
+      <div class="menu-overlay" id="menuOverlay"></div>
       <nav class="navbar">
         <div class="logo">
           <img src="assets/images/logo.png" alt="818 Khangeziwe Services" />
         </div>
 
-        <div class="hamburger" id="hamburger">
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="#">Home</a></li>
