@@ -2582,3 +2582,80 @@ body {
   font-size: 14px;
   color: #666;
 }
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 70px auto;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid,
+  .pricing-grid,
+  .services-grid,
+  .why-grid,
+  .stats-container,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card,
+  .pricing-card,
+  .why-card,
+  .stat-box,
+  .service-card,
+  .team-card {
+    padding: 22px 18px;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-slider img {
+    height: 280px;
+  }
+
+  .slide-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea,
+  .quote-form button {
+    width: 100%;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 24px;
+  }
+
+  .footer-container {
+    gap: 36px;
+    padding: 60px 20px;
+  }
+
+  .logo img {
+    width: 58px;
+  }
+
+  .logo-text h3 {
+    font-size: 16px;
+  }
+}
