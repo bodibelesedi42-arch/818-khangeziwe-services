@@ -2194,15 +2194,21 @@ body.menu-open {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     background: #4b0082;
     flex-direction: column;
     align-items: center;
     max-height: 0;
     overflow: hidden;
-    transition: 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
+    transition: max-height .4s ease;
+    border-radius: 0 0 18px 18px;
+}
+
+.nav-links.active {
+    max-height: 500px;
+    padding: 20px 0;
+}
+  
 
   .nav-links.active {
     max-height: 500px;
@@ -2214,7 +2220,7 @@ body.menu-open {
   }
 
   .nav-links a {
-    color: #fff;
+    color: #6a1b9a;
     font-size: 18px;
   }
 }
@@ -2313,4 +2319,64 @@ body {
 }
 body{
     overflow-x:hidden;
+}
+@media (max-width:768px){
+
+.contact{
+    width:100%;
+    padding:70px 20px;
+}
+
+.contact-container{
+    width:100%;
+    margin:0;
+}
+
+.contact-info,
+.contact-form{
+    width:100%;
+    margin:0;
+}
+
+}
+@media (max-width:768px){
+
+.quote{
+    width:100%;
+    padding:70px 20px;
+}
+
+.quote-form{
+    width:100%;
+    max-width:100%;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea,
+.quote-form button{
+    width:100%;
+}
+
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:70px;
+    border-radius:50%;
+}
+
+.logo-text h3{
+    margin:0;
+    font-size:20px;
+    color:#4b0082;
+}
+
+.logo-text span{
+    font-size:14px;
+    color:#666;
 }
