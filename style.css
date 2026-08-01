@@ -2499,14 +2499,6 @@ body.menu-open {
   .quote-form button {
     width: 100%;
   }
-
-  .mobile-hidden {
-    display: none !important;
-  }
-
-  .mobile-visible {
-    display: block !important;
-  }
 }
 
 body {
